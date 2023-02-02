@@ -19,7 +19,7 @@ class SaintFactory extends Factory
         return [
             //
             "name" => fake()->firstName(),
-            "birthPlace" => fake()->date(),
+            "birthPlace" => fake()->city(),
             "sanctificationDate" => fake()->date(),
             "miraclesNumber" => fake()->randomNumber(2),
         ];
