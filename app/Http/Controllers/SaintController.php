@@ -27,6 +27,7 @@ class SaintController extends Controller
     public function create()
     {
         //
+        return view("saints.create");
     }
 
     /**
@@ -38,6 +39,16 @@ class SaintController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+
+        $newSaint = new Saint();
+        $newSaint->name = $data["name"];
+        $newSaint->birthPlace = $data["birthPlace"];
+        $newSaint->sanctificationDate = $data["sanctificationDate"];
+        $newSaint->miraclesNumber = $data["miraclesNumber"];
+        $newSaint->save();
+
+        return redirect()->route("saints.show", $newSaint->id);
     }
 
     /**

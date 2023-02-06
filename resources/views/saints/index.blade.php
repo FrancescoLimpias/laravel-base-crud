@@ -5,7 +5,9 @@
 @endsection
 
 @section('main')
-    {{-- <button href={{ route('saints.create') }}>Sanctificate someone</button> --}}
+    <a href={{ route('saints.create') }}>
+        <button>Sanctificate someone</button>
+    </a>
     <ul>
         @foreach ($saints as $saint)
             <li>
