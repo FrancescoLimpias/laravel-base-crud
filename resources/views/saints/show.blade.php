@@ -5,6 +5,7 @@
 @endsection
 
 @section('main')
+    <a href={{ route('saints.edit', $saint->id) }}>Edit</a>
     <ul>
         <li>
             Name:

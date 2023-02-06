@@ -69,9 +69,10 @@ class SaintController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Saint $saint)
     {
         //
+        return view("saints.edit", compact("saint"));
     }
 
     /**
@@ -81,9 +82,12 @@ class SaintController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Saint $saint)
     {
         //
+        $data = $request->all();
+        $saint->update($data);
+        return redirect()->route("saints.show", $saint->id);
     }
 
     /**
@@ -92,8 +96,10 @@ class SaintController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Saint $saint)
     {
         //
+        $saint->delete();
+        return redirect()->route('saints.index');
     }
 }
