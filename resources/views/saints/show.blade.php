@@ -32,5 +32,5 @@
         </li>
     </ul>
 
-    <a href={{ route('saints.index') }}><- back</a>
+    @include('components.toIndex')
 @endsection
